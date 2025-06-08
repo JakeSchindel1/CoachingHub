@@ -6,21 +6,17 @@ import DashboardLayout from '@/components/DashboardLayout';
 import {
   PlusIcon,
   MagnifyingGlassIcon,
+  FunnelIcon,
+  Bars3Icon,
+  AdjustmentsHorizontalIcon,
   UserGroupIcon,
-  TrophyIcon,
   ChartBarIcon,
   ChatBubbleLeftIcon,
-  CalendarIcon,
-  ClockIcon,
-  FireIcon,
   EllipsisVerticalIcon,
   EyeIcon,
-  PencilIcon,
-  TrashIcon,
   StarIcon,
   CheckCircleIcon,
-  ExclamationTriangleIcon,
-  HeartIcon
+  ExclamationTriangleIcon
 } from '@heroicons/react/24/outline';
 
 interface AthleteStats {

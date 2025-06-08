@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import DashboardLayout from '@/components/DashboardLayout';
@@ -9,25 +9,20 @@ import {
   PencilIcon,
   ChatBubbleLeftIcon,
   CalendarIcon,
-  ClockIcon,
-  TrophyIcon,
-  FireIcon,
   ChartBarIcon,
   StarIcon,
   CheckCircleIcon,
   XCircleIcon,
   ExclamationTriangleIcon,
-  EyeIcon,
   PlusIcon,
-  DocumentDuplicateIcon,
-  HeartIcon,
   BoltIcon,
   UserIcon,
   EnvelopeIcon,
   PhoneIcon,
   MapPinIcon,
-  AcademicCapIcon,
-  FlagIcon
+  FlagIcon,
+  TrophyIcon,
+  HeartIcon
 } from '@heroicons/react/24/outline';
 
 interface WorkoutHistory {
@@ -273,6 +268,12 @@ export default function AthleteProfilePage() {
     setNewNote('');
   };
 
+  const updateGoal = (goalId: number, updates: Partial<{ title: string; target: string; deadline: string; notes: string }>) => {
+    setGoals(prev => prev.map(goal => 
+      goal.id === goalId ? { ...goal, ...updates } : goal
+    ));
+  };
+
   return (
     <DashboardLayout title="">
       <div className="min-h-screen bg-gray-50">
@@ -333,7 +334,7 @@ export default function AthleteProfilePage() {
               ].map((tab) => (
                 <button
                   key={tab.id}
-                  onClick={() => setActiveTab(tab.id as any)}
+                  onClick={() => setActiveTab(tab.id as 'overview' | 'workouts' | 'progress' | 'goals')}
                   className={`flex items-center px-1 py-4 border-b-2 font-medium text-sm transition-colors ${
                     activeTab === tab.id
                       ? 'border-blue-500 text-blue-600'
@@ -596,7 +597,7 @@ export default function AthleteProfilePage() {
                   <div className="bg-white rounded-xl border border-gray-200 p-6">
                     <h3 className="text-lg font-bold text-gray-900 mb-4">Progress Timeline</h3>
                     <div className="space-y-4">
-                      {athlete.progressMetrics.map((metric, index) => (
+                      {athlete.progressMetrics.map((metric) => (
                         <div key={metric.date} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
                           <div>
                             <p className="font-medium text-gray-900">{metric.date}</p>
@@ -638,7 +639,7 @@ export default function AthleteProfilePage() {
                     </div>
                     <div className="space-y-3">
                       {athlete.goals.map((goal, index) => (
-                        <div key={index} className="flex items-center justify-between p-3 bg-blue-50 rounded-lg">
+                        <div key={`goal-${index}`} className="flex items-center justify-between p-3 bg-blue-50 rounded-lg">
                           <div className="flex items-center space-x-3">
                             <FlagIcon className="h-5 w-5 text-blue-600" />
                             <span className="text-gray-900">{goal}</span>

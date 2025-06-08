@@ -6,10 +6,11 @@ import {
   MagnifyingGlassIcon,
   PlusIcon,
   PaperAirplaneIcon,
+  PaperClipIcon,
   EllipsisVerticalIcon,
+  FunnelIcon,
   XMarkIcon,
-  UserCircleIcon,
-  ClockIcon
+  UserCircleIcon
 } from '@heroicons/react/24/outline';
 
 interface Message {

@@ -3,15 +3,11 @@
 import { useState, useEffect } from 'react';
 import DashboardLayout from '@/components/DashboardLayout';
 import { useExercises } from '@/hooks/useExercises';
-import { WorkoutExercise, Exercise, RunningSegment, StrengthWorkout, RunningWorkout, RunningInterval, StrengthExercise, ExerciseSet } from '@/types';
+import { Exercise, RunningSegment, StrengthWorkout, RunningWorkout, RunningInterval, StrengthExercise, ExerciseSet } from '@/types';
 import {
   MagnifyingGlassIcon,
   PlusIcon,
   XMarkIcon,
-  Bars3Icon,
-  CalendarIcon,
-  DocumentDuplicateIcon,
-  SparklesIcon,
   ClockIcon,
   MapIcon,
   HeartIcon,
@@ -24,7 +20,7 @@ import {
 type WorkoutType = 'strength' | 'running';
 
 export default function CreateWorkoutPage() {
-  const { templates, loading, filterExercises, getExerciseById, getMuscleGroups, getExerciseTypes } = useExercises();
+  const { templates, loading } = useExercises();
   
   // Workout type selection
   const [selectedWorkoutType, setSelectedWorkoutType] = useState<WorkoutType | null>(null);
@@ -39,8 +35,8 @@ export default function CreateWorkoutPage() {
   }, []);
   
   // Shared state
-  const [searchTerm, setSearchTerm] = useState('');
-  const [showTemplates, setShowTemplates] = useState(false);
+  const [searchTerm] = useState('');
+  const [showTemplates] = useState(false);
 
   // Mock athletes data
   const mockAthletes = [
@@ -259,12 +255,12 @@ export default function CreateWorkoutPage() {
       }));
     };
 
-    // Strength workout helper functions (for when we implement strength interface)
+    // Strength workout helper functions
     const addExerciseToWorkout = (exercise: Exercise) => {
       const newExercise: StrengthExercise = {
         id: Date.now().toString(),
         name: exercise.name,
-        muscleGroup: exercise.muscle_groups?.[0] || 'General', // Use first muscle group or fallback
+        muscleGroup: exercise.muscle_groups?.[0] || 'General',
         description: exercise.instructions || exercise.description || 'No description available',
         sets: [
           {
@@ -450,7 +446,7 @@ export default function CreateWorkoutPage() {
                         <p className="text-gray-500">Add segments to create your running workout</p>
                       </div>
                     ) : (
-                      runningWorkout.segments?.map((segment, index) => (
+                      runningWorkout.segments?.map((segment) => (
                         <div key={segment.id} className="relative">
                           {/* Regular Segment */}
                           {segment.type !== 'interval_group' ? (
@@ -561,7 +557,7 @@ export default function CreateWorkoutPage() {
                               </div>
 
                               <div className="space-y-3">
-                                {segment.intervals?.map((interval, intervalIndex) => (
+                                {segment.intervals?.map((interval) => (
                                   <div key={interval.id} className="bg-white rounded-lg border border-purple-200 p-4">
                                     <div className="flex items-center justify-between mb-3">
                                       <div className="flex items-center space-x-2">
@@ -819,7 +815,7 @@ export default function CreateWorkoutPage() {
                       <p className="text-gray-500">Add exercises to create your strength workout</p>
                     </div>
                   ) : (
-                    strengthWorkout.exercises?.map((exercise, index) => (
+                    strengthWorkout.exercises?.map((exercise) => (
                       <div key={exercise.id} className="bg-white rounded-xl border-2 border-blue-200 p-6">
                         <div className="flex items-center justify-between mb-6">
                           <div className="flex items-center space-x-3">

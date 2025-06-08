@@ -104,7 +104,7 @@ export default function CoachDashboardPage() {
 
             {/* Key Metrics Row */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-              {stats.map((stat, index) => (
+              {stats.map((stat) => (
                 <div key={stat.name} className="bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-all cursor-pointer">
                   <div className="flex items-center justify-between">
                     <div>
@@ -129,12 +129,12 @@ export default function CoachDashboardPage() {
             <div className="lg:col-span-2 space-y-6">
               <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
                 <div className="flex items-center justify-between mb-6">
-                  <h2 className="text-xl font-bold text-gray-900">Today's Focus</h2>
+                  <h2 className="text-xl font-bold text-gray-900">Today&apos;s Focus</h2>
                   <span className="text-sm text-gray-500">3 athletes need attention</span>
                 </div>
                 
                 <div className="space-y-4">
-                  {upcomingWorkouts.map((workout, index) => (
+                  {upcomingWorkouts.map((workout) => (
                     <div key={workout.id} className="flex items-center p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all cursor-pointer group">
                       <div className="flex-shrink-0">
                         <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center group-hover:bg-blue-200 transition-all">
@@ -171,9 +171,9 @@ export default function CoachDashboardPage() {
 
               {/* Recent Activity Stream */}
               <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
-                <h2 className="text-xl font-bold text-gray-900 mb-6">What's Happening</h2>
+                <h2 className="text-xl font-bold text-gray-900 mb-6">What&apos;s Happening</h2>
                 <div className="space-y-4">
-                  {recentActivities.map((activity, index) => (
+                  {recentActivities.map((activity) => (
                     <div key={activity.id} className="flex items-start space-x-4">
                       <div className="flex-shrink-0">
                         <div className="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center">

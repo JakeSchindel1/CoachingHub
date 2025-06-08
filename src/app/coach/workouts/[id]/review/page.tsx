@@ -6,20 +6,14 @@ import Link from 'next/link';
 import DashboardLayout from '@/components/DashboardLayout';
 import {
   ArrowLeftIcon,
-  ClockIcon,
-  CalendarIcon,
-  ChatBubbleLeftIcon,
-  PaperAirplaneIcon,
-  CheckCircleIcon,
-  XCircleIcon,
-  FireIcon,
-  TrophyIcon,
-  PlayIcon,
-  ExclamationTriangleIcon,
   StarIcon,
-  HeartIcon,
-  ThumbsUpIcon,
-  DocumentDuplicateIcon
+  ChatBubbleLeftIcon,
+  PlusIcon,
+  TrashIcon,
+  ClockIcon,
+  FireIcon,
+  CheckCircleIcon,
+  XCircleIcon
 } from '@heroicons/react/24/outline';
 
 interface CompletedSet {
@@ -380,11 +374,6 @@ export default function WorkoutReviewPage() {
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
                   <div className="text-center p-4 bg-gray-50 rounded-lg">
-                    <CalendarIcon className="h-6 w-6 text-gray-400 mx-auto mb-2" />
-                    <p className="text-sm text-gray-500">Date</p>
-                    <p className="font-semibold text-gray-900">{completedWorkout.completedDate}</p>
-                  </div>
-                  <div className="text-center p-4 bg-gray-50 rounded-lg">
                     <ClockIcon className="h-6 w-6 text-gray-400 mx-auto mb-2" />
                     <p className="text-sm text-gray-500">Duration</p>
                     <p className="font-semibold text-gray-900">{completedWorkout.totalDuration} min</p>
@@ -399,7 +388,7 @@ export default function WorkoutReviewPage() {
                     </div>
                   </div>
                   <div className="text-center p-4 bg-gray-50 rounded-lg">
-                    <TrophyIcon className="h-6 w-6 text-gray-400 mx-auto mb-2" />
+                    <StarIcon className="h-6 w-6 text-gray-400 mx-auto mb-2" />
                     <p className="text-sm text-gray-500">Overall Rating</p>
                     <div className="flex justify-center">
                       {[1,2,3,4,5].map(star => (
@@ -523,7 +512,7 @@ export default function WorkoutReviewPage() {
                               disabled={!newSetComment[set.id]?.trim()}
                               className="px-3 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                             >
-                              <PaperAirplaneIcon className="h-4 w-4" />
+                              <PlusIcon className="h-4 w-4" />
                             </button>
                           </div>
                         </div>
@@ -601,7 +590,7 @@ export default function WorkoutReviewPage() {
                       disabled={!newComment.trim()}
                       className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center"
                     >
-                      <PaperAirplaneIcon className="h-5 w-5" />
+                      <PlusIcon className="h-5 w-5" />
                     </button>
                   </div>
                 </div>
@@ -676,11 +665,11 @@ export default function WorkoutReviewPage() {
                     Message Athlete
                   </button>
                   <button className="w-full flex items-center justify-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-all">
-                    <DocumentDuplicateIcon className="h-4 w-4 mr-2" />
+                    <PlusIcon className="h-4 w-4 mr-2" />
                     Create Similar Workout
                   </button>
                   <button className="w-full flex items-center justify-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-all">
-                    <TrophyIcon className="h-4 w-4 mr-2" />
+                    <StarIcon className="h-4 w-4 mr-2" />
                     Add to Progress Log
                   </button>
                 </div>
