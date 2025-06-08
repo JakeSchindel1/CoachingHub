@@ -851,7 +851,7 @@ export default function CreateWorkoutPage() {
                                   min="1"
                                   className="w-full px-2 py-1 text-sm border border-gray-300 rounded focus:ring-1 focus:ring-blue-500"
                                   value={set.reps || ''}
-                                  onChange={(_e) => {/* updateSet(exercise.id, set.id, { reps: parseInt(e.target.value) || undefined }) - function will be implemented */}}
+                                  onChange={() => {/* updateSet - function will be implemented */}}
                                 />
                               </div>
                               <div>
@@ -862,7 +862,7 @@ export default function CreateWorkoutPage() {
                                   step="5"
                                   className="w-full px-2 py-1 text-sm border border-gray-300 rounded focus:ring-1 focus:ring-blue-500"
                                   value={set.weight || ''}
-                                  onChange={(_e) => {/* updateSet(exercise.id, set.id, { weight: parseFloat(e.target.value) || undefined }) - function will be implemented */}}
+                                  onChange={() => {/* updateSet - function will be implemented */}}
                                 />
                               </div>
                               <div>
@@ -873,7 +873,7 @@ export default function CreateWorkoutPage() {
                                   step="0.5"
                                   className="w-full px-2 py-1 text-sm border border-gray-300 rounded focus:ring-1 focus:ring-blue-500"
                                   value={set.restPeriod || ''}
-                                  onChange={(_e) => {/* updateSet(exercise.id, set.id, { restPeriod: parseFloat(e.target.value) || undefined }) - function will be implemented */}}
+                                  onChange={() => {/* updateSet - function will be implemented */}}
                                 />
                               </div>
                               <div className="flex items-end">
