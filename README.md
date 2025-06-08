@@ -1,36 +1,129 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CoachingApp
 
-## Getting Started
+A comprehensive platform connecting coaches and athletes for personalized training, workout management, and progress tracking.
 
-First, run the development server:
+## 🚀 Quick Start
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+1. **Clone and install dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Set up environment variables:**
+   Create a `.env.local` file in the root directory:
+   ```env
+   # Supabase Configuration
+   NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+
+   # Stripe Configuration
+   NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
+   STRIPE_SECRET_KEY=your_stripe_secret_key
+   STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
+   ```
+
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open [http://localhost:3000](http://localhost:3000) in your browser**
+
+## 🛠 Tech Stack
+
+- **Frontend:** Next.js 15 with TypeScript
+- **Styling:** TailwindCSS
+- **Database:** Supabase (PostgreSQL)
+- **Authentication:** Supabase Auth
+- **Payments:** Stripe (Subscriptions + Connect)
+- **File Storage:** Supabase Storage
+
+## 📊 Database Schema
+
+### Core Tables
+- `profiles` - User information and roles
+- `organizations` - Coach branding and settings
+- `coach_athletes` - Coach-athlete relationships
+- `workouts` - Workout templates and assignments
+- `exercises` - Individual exercises within workouts
+- `exercise_logs` - Athlete performance tracking
+- `messages` - Coach-athlete communication
+- `file_uploads` - .FIT files, videos, images
+
+## 🏗 Project Structure
+
+```
+src/
+├── app/                 # Next.js App Router pages
+│   ├── page.tsx        # Landing page
+│   ├── about/          # About page
+│   ├── pricing/        # Pricing page
+│   └── globals.css     # Global styles
+├── lib/                # Utility functions
+│   └── supabase.ts     # Supabase client
+└── types/              # TypeScript definitions
+    └── supabase.ts     # Database types
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎨 Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### For Coaches
+- ✅ Create custom workout programs
+- ✅ Manage athlete roster
+- ✅ Track athlete progress
+- ✅ Custom branding (Pro plan)
+- ✅ Collect payments via Stripe Connect
+- ✅ Messaging system
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### For Athletes
+- ✅ View assigned workouts
+- ✅ Upload .FIT files and progress photos
+- ✅ Communicate with coaches
+- ✅ Pay coaches securely
+- ✅ Track workout history
 
-## Learn More
+## 🔧 Development
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# Install dependencies
+npm install
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Start development server
+npm run dev
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Build for production
+npm run build
 
-## Deploy on Vercel
+# Run linting
+npm run lint
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🚀 Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The app is designed to deploy easily on Vercel with Supabase as the backend.
+
+1. Connect your GitHub repo to Vercel
+2. Add environment variables in Vercel dashboard
+3. Deploy!
+
+## 📝 Environment Variables
+
+| Variable | Description | Required |
+|----------|-------------|-----------|
+| `NEXT_PUBLIC_SUPABASE_URL` | Your Supabase project URL | Yes |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase anonymous key | Yes |
+| `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` | Stripe publishable key | Yes |
+| `STRIPE_SECRET_KEY` | Stripe secret key | Yes |
+| `STRIPE_WEBHOOK_SECRET` | Stripe webhook secret | Yes |
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+---
+
+Built with ❤️ for the fitness community
+# CoachingHub
