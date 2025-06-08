@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import DashboardLayout from '@/components/DashboardLayout';
 import { useExercises } from '@/hooks/useExercises';
-import { Exercise, RunningSegment, StrengthWorkout, RunningWorkout, RunningInterval, StrengthExercise, ExerciseSet } from '@/types';
+import { RunningSegment, StrengthWorkout, RunningWorkout, RunningInterval } from '@/types';
 import {
   PlusIcon,
   XMarkIcon,
