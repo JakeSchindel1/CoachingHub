@@ -11,6 +11,7 @@ const MOCK_EXERCISES: Exercise[] = [
     name: 'Bench Press',
     type: 'strength',
     muscle_groups: ['chest', 'triceps', 'shoulders'],
+    muscleGroup: 'chest',
     instructions: 'Lie on bench, grip bar shoulder-width apart, lower to chest, press up explosively.',
   },
   {
@@ -18,6 +19,7 @@ const MOCK_EXERCISES: Exercise[] = [
     name: 'Pull-ups',
     type: 'strength',
     muscle_groups: ['back', 'biceps'],
+    muscleGroup: 'back',
     instructions: 'Hang from bar, pull body up until chin over bar, lower with control.',
   },
   {
@@ -25,6 +27,7 @@ const MOCK_EXERCISES: Exercise[] = [
     name: 'Overhead Press',
     type: 'strength',
     muscle_groups: ['shoulders', 'triceps', 'core'],
+    muscleGroup: 'shoulders',
     instructions: 'Press barbell from shoulders to overhead, keep core tight.',
   },
   {
@@ -32,6 +35,7 @@ const MOCK_EXERCISES: Exercise[] = [
     name: 'Dumbbell Rows',
     type: 'strength',
     muscle_groups: ['back', 'biceps'],
+    muscleGroup: 'back',
     instructions: 'Hinge at hips, row dumbbell to ribcage, squeeze shoulder blades.',
   },
   {
@@ -39,6 +43,7 @@ const MOCK_EXERCISES: Exercise[] = [
     name: 'Dips',
     type: 'strength',
     muscle_groups: ['triceps', 'chest', 'shoulders'],
+    muscleGroup: 'triceps',
     instructions: 'Lower body by bending arms, press back up to starting position.',
   },
 
@@ -48,6 +53,7 @@ const MOCK_EXERCISES: Exercise[] = [
     name: 'Squats',
     type: 'strength',
     muscle_groups: ['quadriceps', 'glutes', 'core'],
+    muscleGroup: 'quadriceps',
     instructions: 'Feet shoulder-width apart, sit back and down, drive through heels to stand.',
   },
   {
@@ -55,6 +61,7 @@ const MOCK_EXERCISES: Exercise[] = [
     name: 'Deadlifts',
     type: 'strength',
     muscle_groups: ['hamstrings', 'glutes', 'back', 'core'],
+    muscleGroup: 'hamstrings',
     instructions: 'Hip hinge movement, keep bar close to body, drive hips forward.',
   },
   {
@@ -62,6 +69,7 @@ const MOCK_EXERCISES: Exercise[] = [
     name: 'Lunges',
     type: 'strength',
     muscle_groups: ['quadriceps', 'glutes', 'calves'],
+    muscleGroup: 'quadriceps',
     instructions: 'Step forward, lower until both knees at 90 degrees, return to start.',
   },
   {
@@ -69,6 +77,7 @@ const MOCK_EXERCISES: Exercise[] = [
     name: 'Bulgarian Split Squats',
     type: 'strength',
     muscle_groups: ['quadriceps', 'glutes'],
+    muscleGroup: 'quadriceps',
     instructions: 'Rear foot elevated, lower into lunge position, drive through front heel.',
   },
   {
@@ -76,6 +85,7 @@ const MOCK_EXERCISES: Exercise[] = [
     name: 'Hip Thrusts',
     type: 'strength',
     muscle_groups: ['glutes', 'hamstrings'],
+    muscleGroup: 'glutes',
     instructions: 'Shoulders on bench, drive hips up, squeeze glutes at top.',
   },
 
@@ -85,6 +95,7 @@ const MOCK_EXERCISES: Exercise[] = [
     name: 'Running',
     type: 'cardio',
     muscle_groups: ['legs', 'cardiovascular'],
+    muscleGroup: 'legs',
     instructions: 'Maintain steady pace, focus on breathing rhythm.',
   },
   {
@@ -92,6 +103,7 @@ const MOCK_EXERCISES: Exercise[] = [
     name: 'Cycling',
     type: 'cardio',
     muscle_groups: ['legs', 'cardiovascular'],
+    muscleGroup: 'legs',
     instructions: 'Maintain cadence between 80-100 RPM, adjust resistance as needed.',
   },
   {
@@ -99,6 +111,7 @@ const MOCK_EXERCISES: Exercise[] = [
     name: 'Rowing',
     type: 'cardio',
     muscle_groups: ['back', 'legs', 'arms', 'cardiovascular'],
+    muscleGroup: 'back',
     instructions: 'Drive with legs, lean back, pull handle to chest, reverse the motion.',
   },
   {
@@ -106,6 +119,7 @@ const MOCK_EXERCISES: Exercise[] = [
     name: 'Burpees',
     type: 'cardio',
     muscle_groups: ['full body', 'cardiovascular'],
+    muscleGroup: 'full body',
     instructions: 'Drop to plank, push-up, jump feet to hands, jump up with arms overhead.',
   },
   {
@@ -113,6 +127,7 @@ const MOCK_EXERCISES: Exercise[] = [
     name: 'Mountain Climbers',
     type: 'cardio',
     muscle_groups: ['core', 'shoulders', 'cardiovascular'],
+    muscleGroup: 'core',
     instructions: 'Plank position, alternate bringing knees to chest rapidly.',
   },
 
@@ -122,6 +137,7 @@ const MOCK_EXERCISES: Exercise[] = [
     name: 'Plank',
     type: 'flexibility',
     muscle_groups: ['core', 'shoulders'],
+    muscleGroup: 'core',
     instructions: 'Hold straight line from head to heels, engage core muscles.',
   },
   {
@@ -129,6 +145,7 @@ const MOCK_EXERCISES: Exercise[] = [
     name: 'Russian Twists',
     type: 'strength',
     muscle_groups: ['core', 'obliques'],
+    muscleGroup: 'core',
     instructions: 'Sit with feet off ground, rotate torso side to side.',
   },
   {
@@ -136,6 +153,7 @@ const MOCK_EXERCISES: Exercise[] = [
     name: 'Dead Bug',
     type: 'flexibility',
     muscle_groups: ['core'],
+    muscleGroup: 'core',
     instructions: 'Lie on back, extend opposite arm and leg, return with control.',
   },
   {
@@ -143,6 +161,7 @@ const MOCK_EXERCISES: Exercise[] = [
     name: 'Cat-Cow Stretch',
     type: 'flexibility',
     muscle_groups: ['spine', 'core'],
+    muscleGroup: 'spine',
     instructions: 'On hands and knees, alternate between arching and rounding spine.',
   },
   {
@@ -150,6 +169,7 @@ const MOCK_EXERCISES: Exercise[] = [
     name: 'Pigeon Pose',
     type: 'flexibility',
     muscle_groups: ['hips', 'glutes'],
+    muscleGroup: 'hips',
     instructions: 'From downward dog, bring knee forward, extend back leg, hold stretch.',
   },
 
@@ -159,6 +179,7 @@ const MOCK_EXERCISES: Exercise[] = [
     name: 'Clean and Jerk',
     type: 'strength',
     muscle_groups: ['full body', 'power'],
+    muscleGroup: 'full body',
     instructions: 'Explosive lift from floor to shoulders, then overhead. Technical movement.',
   },
   {
@@ -166,6 +187,7 @@ const MOCK_EXERCISES: Exercise[] = [
     name: 'Snatch',
     type: 'strength',
     muscle_groups: ['full body', 'power'],
+    muscleGroup: 'full body',
     instructions: 'Single explosive movement from floor to overhead. Highly technical.',
   },
 
@@ -175,6 +197,7 @@ const MOCK_EXERCISES: Exercise[] = [
     name: 'Box Jumps',
     type: 'other',
     muscle_groups: ['legs', 'power'],
+    muscleGroup: 'legs',
     instructions: 'Jump onto box with both feet, step down with control.',
   },
   {
@@ -182,6 +205,7 @@ const MOCK_EXERCISES: Exercise[] = [
     name: 'Jump Squats',
     type: 'other',
     muscle_groups: ['legs', 'power'],
+    muscleGroup: 'legs',
     instructions: 'Squat down, explode up into jump, land softly.',
   },
   {
@@ -189,6 +213,7 @@ const MOCK_EXERCISES: Exercise[] = [
     name: 'Medicine Ball Slams',
     type: 'other',
     muscle_groups: ['core', 'shoulders', 'power'],
+    muscleGroup: 'core',
     instructions: 'Lift ball overhead, slam down with force, catch on bounce.',
   },
 ];
