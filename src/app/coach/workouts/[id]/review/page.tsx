@@ -9,7 +9,6 @@ import {
   StarIcon,
   ChatBubbleLeftIcon,
   PlusIcon,
-  TrashIcon,
   ClockIcon,
   FireIcon,
   CheckCircleIcon,

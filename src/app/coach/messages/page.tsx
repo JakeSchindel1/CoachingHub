@@ -6,9 +6,7 @@ import {
   MagnifyingGlassIcon,
   PlusIcon,
   PaperAirplaneIcon,
-  PaperClipIcon,
   EllipsisVerticalIcon,
-  FunnelIcon,
   XMarkIcon,
   UserCircleIcon
 } from '@heroicons/react/24/outline';

@@ -6,9 +6,6 @@ import DashboardLayout from '@/components/DashboardLayout';
 import {
   PlusIcon,
   MagnifyingGlassIcon,
-  FunnelIcon,
-  Bars3Icon,
-  AdjustmentsHorizontalIcon,
   UserGroupIcon,
   ChartBarIcon,
   ChatBubbleLeftIcon,

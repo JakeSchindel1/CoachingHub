@@ -268,11 +268,12 @@ export default function AthleteProfilePage() {
     setNewNote('');
   };
 
-  const updateGoal = (goalId: number, updates: Partial<{ title: string; target: string; deadline: string; notes: string }>) => {
-    setGoals(prev => prev.map(goal => 
-      goal.id === goalId ? { ...goal, ...updates } : goal
-    ));
-  };
+  // Function to update goals - available for future use
+  // const updateGoal = (goalId: number, updates: Partial<{ title: string; target: string; deadline: string; notes: string }>) => {
+  //   setGoals(prev => prev.map(goal => 
+  //     goal.id === goalId ? { ...goal, ...updates } : goal
+  //   ));
+  // };
 
   return (
     <DashboardLayout title="">

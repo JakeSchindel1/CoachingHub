@@ -5,10 +5,8 @@ import DashboardLayout from '@/components/DashboardLayout';
 import { useExercises } from '@/hooks/useExercises';
 import { Exercise, RunningSegment, StrengthWorkout, RunningWorkout, RunningInterval, StrengthExercise, ExerciseSet } from '@/types';
 import {
-  MagnifyingGlassIcon,
   PlusIcon,
   XMarkIcon,
-  ClockIcon,
   MapIcon,
   HeartIcon,
   FireIcon,
@@ -34,9 +32,9 @@ export default function CreateWorkoutPage() {
     }
   }, []);
   
-  // Shared state
-  const [searchTerm] = useState('');
-  const [showTemplates] = useState(false);
+  // Shared state - available for future features
+  // const [searchTerm] = useState('');
+  // const [showTemplates] = useState(false);
 
   // Mock athletes data
   const mockAthletes = [
@@ -255,7 +253,8 @@ export default function CreateWorkoutPage() {
       }));
     };
 
-    // Strength workout helper functions
+    // Strength workout helper functions - available for future use when implementing strength workouts
+    /*
     const addExerciseToWorkout = (exercise: Exercise) => {
       const newExercise: StrengthExercise = {
         id: Date.now().toString(),
@@ -329,6 +328,7 @@ export default function CreateWorkoutPage() {
         ) || [],
       }));
     };
+    */
 
     return (
       <DashboardLayout title="">
