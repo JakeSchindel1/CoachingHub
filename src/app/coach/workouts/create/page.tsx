@@ -792,16 +792,10 @@ export default function CreateWorkoutPage() {
                 <div className="p-8 border-b border-gray-200">
                   <h3 className="text-xl font-bold text-gray-900 mb-6">Add Exercises</h3>
                   <div className="flex flex-wrap gap-3">
-                    {templates.filter(ex => ex.type === 'strength').slice(0, 12).map((exercise) => (
-                      <button
-                        key={exercise.id}
-                        onClick={() => addExerciseToWorkout(exercise)}
-                        className="flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all"
-                      >
-                        <PlusIcon className="h-4 w-4 mr-2" />
-                        {exercise.name}
-                      </button>
-                    ))}
+                    {/* Exercise templates will be available when strength workout functionality is implemented */}
+                    <div className="text-center py-8 w-full">
+                      <p className="text-gray-500">Exercise library coming soon...</p>
+                    </div>
                   </div>
                 </div>
 
@@ -826,7 +820,7 @@ export default function CreateWorkoutPage() {
                             </span>
                           </div>
                           <button
-                            onClick={() => removeExerciseFromWorkout(exercise.id)}
+                            onClick={() => {/* removeExerciseFromWorkout(exercise.id) - function will be implemented */}}
                             className="text-gray-400 hover:text-red-500 transition-colors"
                           >
                             <XMarkIcon className="h-5 w-5" />
@@ -838,7 +832,7 @@ export default function CreateWorkoutPage() {
                           <div className="flex items-center justify-between">
                             <h5 className="font-medium text-gray-700">Sets</h5>
                             <button
-                              onClick={() => addSetToExercise(exercise.id)}
+                              onClick={() => {/* addSetToExercise(exercise.id) - function will be implemented */}}
                               className="text-blue-500 hover:text-blue-600 text-sm font-medium"
                             >
                               + Add Set
@@ -857,7 +851,7 @@ export default function CreateWorkoutPage() {
                                   min="1"
                                   className="w-full px-2 py-1 text-sm border border-gray-300 rounded focus:ring-1 focus:ring-blue-500"
                                   value={set.reps || ''}
-                                  onChange={(e) => updateSet(exercise.id, set.id, { reps: parseInt(e.target.value) || undefined })}
+                                  onChange={(e) => {/* updateSet(exercise.id, set.id, { reps: parseInt(e.target.value) || undefined }) - function will be implemented */}}
                                 />
                               </div>
                               <div>
@@ -868,7 +862,7 @@ export default function CreateWorkoutPage() {
                                   step="5"
                                   className="w-full px-2 py-1 text-sm border border-gray-300 rounded focus:ring-1 focus:ring-blue-500"
                                   value={set.weight || ''}
-                                  onChange={(e) => updateSet(exercise.id, set.id, { weight: parseFloat(e.target.value) || undefined })}
+                                  onChange={(e) => {/* updateSet(exercise.id, set.id, { weight: parseFloat(e.target.value) || undefined }) - function will be implemented */}}
                                 />
                               </div>
                               <div>
@@ -879,12 +873,12 @@ export default function CreateWorkoutPage() {
                                   step="0.5"
                                   className="w-full px-2 py-1 text-sm border border-gray-300 rounded focus:ring-1 focus:ring-blue-500"
                                   value={set.restPeriod || ''}
-                                  onChange={(e) => updateSet(exercise.id, set.id, { restPeriod: parseFloat(e.target.value) || undefined })}
+                                  onChange={(e) => {/* updateSet(exercise.id, set.id, { restPeriod: parseFloat(e.target.value) || undefined }) - function will be implemented */}}
                                 />
                               </div>
                               <div className="flex items-end">
                                 <button
-                                  onClick={() => removeSetFromExercise(exercise.id, set.id)}
+                                  onClick={() => {/* removeSetFromExercise(exercise.id, set.id) - function will be implemented */}}
                                   className="text-gray-400 hover:text-red-500 transition-colors"
                                 >
                                   <XMarkIcon className="h-4 w-4" />
