@@ -5,7 +5,6 @@ import DashboardLayout from '@/components/DashboardLayout';
 import { useExercises } from '@/hooks/useExercises';
 import { RunningSegment, StrengthWorkout, RunningWorkout, RunningInterval } from '@/types';
 import {
-  PlusIcon,
   XMarkIcon,
   MapIcon,
   HeartIcon,
@@ -18,7 +17,8 @@ import {
 type WorkoutType = 'strength' | 'running';
 
 export default function CreateWorkoutPage() {
-  const { templates, loading } = useExercises();
+  const { loading } = useExercises();
+  // const { templates } = useExercises(); // Available for future use
   
   // Workout type selection
   const [selectedWorkoutType, setSelectedWorkoutType] = useState<WorkoutType | null>(null);
@@ -851,7 +851,7 @@ export default function CreateWorkoutPage() {
                                   min="1"
                                   className="w-full px-2 py-1 text-sm border border-gray-300 rounded focus:ring-1 focus:ring-blue-500"
                                   value={set.reps || ''}
-                                  onChange={(e) => {/* updateSet(exercise.id, set.id, { reps: parseInt(e.target.value) || undefined }) - function will be implemented */}}
+                                  onChange={(_e) => {/* updateSet(exercise.id, set.id, { reps: parseInt(e.target.value) || undefined }) - function will be implemented */}}
                                 />
                               </div>
                               <div>
@@ -862,7 +862,7 @@ export default function CreateWorkoutPage() {
                                   step="5"
                                   className="w-full px-2 py-1 text-sm border border-gray-300 rounded focus:ring-1 focus:ring-blue-500"
                                   value={set.weight || ''}
-                                  onChange={(e) => {/* updateSet(exercise.id, set.id, { weight: parseFloat(e.target.value) || undefined }) - function will be implemented */}}
+                                  onChange={(_e) => {/* updateSet(exercise.id, set.id, { weight: parseFloat(e.target.value) || undefined }) - function will be implemented */}}
                                 />
                               </div>
                               <div>
@@ -873,7 +873,7 @@ export default function CreateWorkoutPage() {
                                   step="0.5"
                                   className="w-full px-2 py-1 text-sm border border-gray-300 rounded focus:ring-1 focus:ring-blue-500"
                                   value={set.restPeriod || ''}
-                                  onChange={(e) => {/* updateSet(exercise.id, set.id, { restPeriod: parseFloat(e.target.value) || undefined }) - function will be implemented */}}
+                                  onChange={(_e) => {/* updateSet(exercise.id, set.id, { restPeriod: parseFloat(e.target.value) || undefined }) - function will be implemented */}}
                                 />
                               </div>
                               <div className="flex items-end">
